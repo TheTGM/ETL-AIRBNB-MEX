@@ -1,0 +1,59 @@
+{
+  "proceso_etl": {
+    "fecha_ejecucion": "2025-10-15 21:07:28",
+    "configuracion": {
+      "mongodb": {
+        "host": "localhost",
+        "puerto": 27017,
+        "nombre_bd": "local"
+      },
+      "extraccion": {
+        "limite_registros": 50000,
+        "colecciones": [
+          "listings",
+          "reviews"
+        ]
+      },
+      "carga": {
+        "sqlite_path": "data/airbnb_dw.db",
+        "excel_path": "output/"
+      },
+      "logs": {
+        "nivel": "INFO"
+      }
+    },
+    "estado": "COMPLETADO"
+  },
+  "extraccion": {
+    "colecciones_procesadas": [
+      "listings",
+      "reviews",
+      "calendar"
+    ],
+    "registros_extraidos": {
+      "listings": 26401,
+      "reviews": 50000,
+      "calendar": 0
+    }
+  },
+  "transformacion": {
+    "colecciones_transformadas": [
+      "listings",
+      "reviews"
+    ],
+    "registros_transformados": {
+      "listings": 26401,
+      "reviews": 50000
+    }
+  },
+  "carga": {
+    "verificacion": {
+      "raw_listings_transformado": {
+        "registros": 26401
+      },
+      "raw_reviews_transformado": {
+        "registros": 50000
+      }
+    }
+  }
+}

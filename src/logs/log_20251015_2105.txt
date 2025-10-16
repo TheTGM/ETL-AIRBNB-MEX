@@ -1,0 +1,130 @@
+2025-10-15 21:05:11,963 - ETL_MANAGER - INFO - === Iniciando proceso ETL_MANAGER ===
+2025-10-15 21:05:11,964 - ETL_MANAGER - INFO - === INICIANDO PROCESO ETL COMPLETO ===
+2025-10-15 21:05:11,964 - ETL_MANAGER - INFO - Hora de inicio: 2025-10-15 21:05:11
+2025-10-15 21:05:11,964 - ETL_MANAGER - INFO - Configuración validada correctamente
+2025-10-15 21:05:11,965 - EXTRACCION - INFO - === Iniciando proceso EXTRACCION ===
+2025-10-15 21:05:11,967 - TRANSFORMACION - INFO - === Iniciando proceso TRANSFORMACION ===
+2025-10-15 21:05:11,968 - CARGA - INFO - === Iniciando proceso CARGA ===
+2025-10-15 21:05:11,969 - CARGA - INFO - Carga inicializada - SQLite: data/airbnb_dw.db, Excel: output/
+2025-10-15 21:05:11,970 - ETL_MANAGER - INFO - Componentes ETL inicializados correctamente
+2025-10-15 21:05:11,970 - ETL_MANAGER - INFO - === FASE 1: EXTRACCIÓN ===
+2025-10-15 21:05:11,995 - EXTRACCION - INFO - Conexión exitosa a MongoDB: localhost:27017/local
+2025-10-15 21:05:11,998 - EXTRACCION - INFO - === Estadísticas de la base de datos ===
+2025-10-15 21:05:12,770 - EXTRACCION - INFO - reviews: 1,388,226 documentos
+2025-10-15 21:05:12,788 - EXTRACCION - INFO - listings: 26,401 documentos
+2025-10-15 21:05:12,791 - EXTRACCION - INFO - startup_log: 8 documentos
+2025-10-15 21:05:12,792 - EXTRACCION - INFO - Colecciones disponibles en la BD: ['reviews', 'listings', 'startup_log']
+2025-10-15 21:05:12,792 - EXTRACCION - INFO - Colecciones a extraer: ['listings', 'reviews']
+2025-10-15 21:05:12,793 - EXTRACCION - INFO - === Iniciando extracción de colecciones disponibles ===
+2025-10-15 21:05:12,793 - EXTRACCION - INFO - Procesando colección: listings
+2025-10-15 21:05:12,873 - EXTRACCION - INFO - Total de documentos en 'listings': 26401
+2025-10-15 21:05:13,877 - EXTRACCION - INFO - Extrayendo 50000 documentos de 'listings'
+2025-10-15 21:05:14,576 - EXTRACCION - INFO - DataFrame creado: 26401 filas, 77 columnas
+2025-10-15 21:05:14,577 - EXTRACCION - INFO - Columnas en 'listings': ['_id', 'id', 'listing_url', 'scrape_id', 'last_scraped', 'source', 'name', 'description', 'neighborhood_overview', 'picture_url', 'host_id', 'host_url', 'host_name', 'host_since', 'host_location', 'host_about', 'host_response_time', 'host_response_rate', 'host_acceptance_rate', 'host_is_superhost', 'host_thumbnail_url', 'host_picture_url', 'host_listings_count', 'host_total_listings_count', 'host_verifications', 'host_has_profile_pic', 'host_identity_verified', 'neighbourhood', 'neighbourhood_cleansed', 'latitude', 'longitude', 'property_type', 'room_type', 'accommodates', 'bathrooms', 'bathrooms_text', 'bedrooms', 'beds', 'amenities', 'price', 'minimum_nights', 'maximum_nights', 'minimum_minimum_nights', 'maximum_minimum_nights', 'minimum_maximum_nights', 'maximum_maximum_nights', 'minimum_nights_avg_ntm', 'maximum_nights_avg_ntm', 'has_availability', 'availability_30', 'availability_60', 'availability_90', 'availability_365', 'calendar_last_scraped', 'number_of_reviews', 'number_of_reviews_ltm', 'number_of_reviews_l30d', 'availability_eoy', 'number_of_reviews_ly', 'estimated_occupancy_l365d', 'estimated_revenue_l365d', 'instant_bookable', 'calculated_host_listings_count', 'calculated_host_listings_count_entire_homes', 'calculated_host_listings_count_private_rooms', 'calculated_host_listings_count_shared_rooms', 'host_neighbourhood', 'first_review', 'last_review', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', 'review_scores_value', 'reviews_per_month']
+2025-10-15 21:05:14,681 - EXTRACCION - INFO - ✓ listings: 26401 registros extraídos
+2025-10-15 21:05:14,681 - EXTRACCION - INFO - Procesando colección: reviews
+2025-10-15 21:05:15,457 - EXTRACCION - INFO - Total de documentos en 'reviews': 1388226
+2025-10-15 21:05:15,841 - EXTRACCION - INFO - Extrayendo 50000 documentos de 'reviews'
+2025-10-15 21:05:16,042 - EXTRACCION - INFO - DataFrame creado: 50000 filas, 7 columnas
+2025-10-15 21:05:16,043 - EXTRACCION - INFO - Columnas en 'reviews': ['_id', 'listing_id', 'id', 'date', 'reviewer_id', 'reviewer_name', 'comments']
+2025-10-15 21:05:16,086 - EXTRACCION - INFO - ✓ reviews: 50000 registros extraídos
+2025-10-15 21:05:16,089 - EXTRACCION - INFO - ○ calendar: No disponible, agregando DataFrame vacío
+2025-10-15 21:05:16,089 - EXTRACCION - INFO - === Extracción completada ===
+2025-10-15 21:05:16,089 - ETL_MANAGER - INFO - Datos extraídos de listings: 26401 registros
+2025-10-15 21:05:16,089 - ETL_MANAGER - INFO - Datos extraídos de reviews: 50000 registros
+2025-10-15 21:05:16,089 - ETL_MANAGER - INFO - Colección calendar: Sin datos disponibles
+2025-10-15 21:05:16,091 - EXTRACCION - INFO - Conexión a MongoDB cerrada
+2025-10-15 21:05:16,091 - ETL_MANAGER - INFO - Fase de extracción completada exitosamente
+2025-10-15 21:05:16,092 - ETL_MANAGER - INFO - === FASE 2: TRANSFORMACIÓN ===
+2025-10-15 21:05:16,092 - TRANSFORMACION - INFO - === INICIANDO TRANSFORMACIÓN COMPLETA ===
+2025-10-15 21:05:16,093 - TRANSFORMACION - INFO - === Iniciando transformación de LISTINGS ===
+2025-10-15 21:05:16,117 - TRANSFORMACION - INFO - Registros iniciales: 26401
+2025-10-15 21:05:16,117 - TRANSFORMACION - INFO - Paso 1: Limpieza de valores nulos críticos
+2025-10-15 21:05:16,162 - TRANSFORMACION - INFO - Registros después de eliminar nulos críticos: 26401
+2025-10-15 21:05:16,162 - TRANSFORMACION - INFO - Paso 2: Eliminación de duplicados
+2025-10-15 21:05:16,205 - TRANSFORMACION - INFO - Registros después de eliminar duplicados: 26401
+2025-10-15 21:05:16,206 - TRANSFORMACION - INFO - Paso 3: Normalización de precios
+2025-10-15 21:05:16,261 - TRANSFORMACION - INFO - Precios normalizados
+2025-10-15 21:05:16,261 - TRANSFORMACION - INFO - Paso 4: Conversión de fechas
+2025-10-15 21:05:16,454 - TRANSFORMACION - INFO - Fecha host_since normalizada
+2025-10-15 21:05:16,626 - TRANSFORMACION - INFO - Fecha calendar_last_scraped normalizada
+2025-10-15 21:05:16,797 - TRANSFORMACION - INFO - Fecha last_scraped normalizada
+2025-10-15 21:05:16,798 - TRANSFORMACION - INFO - Paso 5: Categorización de precios
+2025-10-15 21:05:16,920 - TRANSFORMACION - INFO - Precios categorizados exitosamente
+2025-10-15 21:05:16,934 - TRANSFORMACION - INFO - Precios categorizados
+2025-10-15 21:05:16,935 - TRANSFORMACION - INFO - Paso 6: Expansión de amenities
+2025-10-15 21:05:17,042 - TRANSFORMACION - INFO - Procesando columna amenities
+2025-10-15 21:05:33,286 - TRANSFORMACION - INFO - Columna amenity_wifi creada exitosamente
+2025-10-15 21:05:33,297 - TRANSFORMACION - INFO - Columna amenity_kitchen creada exitosamente
+2025-10-15 21:05:33,311 - TRANSFORMACION - INFO - Columna amenity_air_conditioning creada exitosamente
+2025-10-15 21:05:33,322 - TRANSFORMACION - INFO - Columna amenity_heating creada exitosamente
+2025-10-15 21:05:33,336 - TRANSFORMACION - INFO - Columna amenity_tv creada exitosamente
+2025-10-15 21:05:33,348 - TRANSFORMACION - INFO - Columna amenity_washer creada exitosamente
+2025-10-15 21:05:33,359 - TRANSFORMACION - INFO - Columna amenity_dryer creada exitosamente
+2025-10-15 21:05:33,374 - TRANSFORMACION - INFO - Columna amenity_pool creada exitosamente
+2025-10-15 21:05:33,387 - TRANSFORMACION - INFO - Columna amenity_gym creada exitosamente
+2025-10-15 21:05:33,399 - TRANSFORMACION - INFO - Columna amenity_parking creada exitosamente
+2025-10-15 21:05:33,399 - TRANSFORMACION - INFO - Expansión de amenities completada
+2025-10-15 21:05:33,423 - TRANSFORMACION - INFO - Amenities expandidos
+2025-10-15 21:05:33,424 - TRANSFORMACION - INFO - Paso 7: Normalización de campos categóricos
+2025-10-15 21:05:33,448 - TRANSFORMACION - INFO - Columna categórica room_type normalizada correctamente
+2025-10-15 21:05:33,472 - TRANSFORMACION - INFO - Columna categórica property_type normalizada correctamente
+2025-10-15 21:05:33,473 - TRANSFORMACION - INFO - Paso 8: Conversión de booleanos
+2025-10-15 21:05:37,355 - TRANSFORMACION - INFO - Columna booleana host_is_superhost procesada correctamente
+2025-10-15 21:05:41,250 - TRANSFORMACION - INFO - Columna booleana host_identity_verified procesada correctamente
+2025-10-15 21:05:45,230 - TRANSFORMACION - INFO - Columna booleana has_availability procesada correctamente
+2025-10-15 21:05:45,230 - TRANSFORMACION - INFO - Paso 9: Limpieza de valores numéricos
+2025-10-15 21:05:45,232 - TRANSFORMACION - INFO - Columna numérica accommodates procesada correctamente
+2025-10-15 21:05:45,233 - TRANSFORMACION - INFO - Columna numérica bedrooms procesada correctamente
+2025-10-15 21:05:45,236 - TRANSFORMACION - INFO - Columna numérica beds procesada correctamente
+2025-10-15 21:05:45,237 - TRANSFORMACION - INFO - Columna numérica minimum_nights procesada correctamente
+2025-10-15 21:05:45,238 - TRANSFORMACION - INFO - Columna numérica maximum_nights procesada correctamente
+2025-10-15 21:05:45,239 - TRANSFORMACION - INFO - Columna numérica availability_30 procesada correctamente
+2025-10-15 21:05:45,242 - TRANSFORMACION - INFO - Columna numérica availability_60 procesada correctamente
+2025-10-15 21:05:45,243 - TRANSFORMACION - INFO - Columna numérica availability_90 procesada correctamente
+2025-10-15 21:05:45,244 - TRANSFORMACION - INFO - Columna numérica availability_365 procesada correctamente
+2025-10-15 21:05:45,245 - TRANSFORMACION - INFO - Paso 10: Limpieza de campos de texto
+2025-10-15 21:05:45,277 - TRANSFORMACION - INFO - Columna de texto neighbourhood_cleansed procesada correctamente
+2025-10-15 21:05:45,308 - TRANSFORMACION - INFO - Columna de texto name procesada correctamente
+2025-10-15 21:05:45,338 - TRANSFORMACION - INFO - Columna de texto description procesada correctamente
+2025-10-15 21:05:45,338 - TRANSFORMACION - INFO - Registros finales: 26401
+2025-10-15 21:05:45,338 - TRANSFORMACION - INFO - Registros eliminados: 0
+2025-10-15 21:05:45,339 - TRANSFORMACION - INFO - === Iniciando transformación de REVIEWS ===
+2025-10-15 21:05:45,343 - TRANSFORMACION - INFO - Registros iniciales: 50000
+2025-10-15 21:05:45,356 - TRANSFORMACION - INFO - Registros después de eliminar nulos críticos: 50000
+2025-10-15 21:05:45,372 - TRANSFORMACION - INFO - Registros después de eliminar duplicados: 50000
+2025-10-15 21:05:47,061 - TRANSFORMACION - INFO - Registros finales: 50000
+2025-10-15 21:05:47,061 - TRANSFORMACION - INFO - Registros eliminados: 0
+2025-10-15 21:05:47,061 - TRANSFORMACION - INFO - === RESUMEN DE TRANSFORMACIONES ===
+2025-10-15 21:05:47,062 - TRANSFORMACION - INFO - listings: 26401 registros, 110 columnas
+2025-10-15 21:05:47,063 - TRANSFORMACION - INFO - reviews: 50000 registros, 18 columnas
+2025-10-15 21:05:47,446 - TRANSFORMACION - INFO - Reporte de calidad generado
+2025-10-15 21:05:47,446 - ETL_MANAGER - INFO - Calidad listings: 26401 registros
+2025-10-15 21:05:47,446 - ETL_MANAGER - INFO - Calidad reviews: 50000 registros
+2025-10-15 21:05:47,447 - ETL_MANAGER - INFO - Fase de transformación completada exitosamente
+2025-10-15 21:05:47,447 - ETL_MANAGER - INFO - === FASE 3: CARGA ===
+2025-10-15 21:05:47,448 - CARGA - INFO - === INICIANDO CARGA COMPLETA ===
+2025-10-15 21:05:47,448 - CARGA - INFO - === INICIANDO CARGA A SQLITE ===
+2025-10-15 21:05:47,627 - CARGA - INFO - Columna '_id' eliminada para compatibilidad con SQLite
+2025-10-15 21:05:49,730 - CARGA - INFO - Tabla 'raw_listings_transformado' cargada: 26401 registros, 109 columnas
+2025-10-15 21:05:49,826 - CARGA - INFO - Columna '_id' eliminada para compatibilidad con SQLite
+2025-10-15 21:05:51,349 - CARGA - INFO - Tabla 'raw_reviews_transformado' cargada: 50000 registros, 17 columnas
+2025-10-15 21:05:51,349 - CARGA - INFO - Carga a SQLite completada exitosamente
+2025-10-15 21:05:51,354 - CARGA - INFO - === INICIANDO EXPORTACIÓN A EXCEL ===
+2025-10-15 21:06:58,199 - CARGA - INFO - Archivo Excel creado: output/listings_transformado_20251015_2105.xlsx
+2025-10-15 21:07:27,843 - CARGA - INFO - Archivo Excel creado: output/reviews_transformado_20251015_2105.xlsx
+2025-10-15 21:07:27,843 - CARGA - INFO - === VERIFICANDO INTEGRIDAD DE CARGA ===
+2025-10-15 21:07:28,001 - CARGA - INFO - Tabla 'raw_listings_transformado': 26401 registros
+2025-10-15 21:07:28,065 - CARGA - INFO - Tabla 'raw_reviews_transformado': 50000 registros
+2025-10-15 21:07:28,066 - CARGA - INFO - === CARGA COMPLETA FINALIZADA ===
+2025-10-15 21:07:28,066 - ETL_MANAGER - INFO - Fase de carga completada exitosamente
+2025-10-15 21:07:28,066 - ETL_MANAGER - INFO - === GENERANDO REPORTE FINAL ===
+2025-10-15 21:07:28,068 - ETL_MANAGER - INFO - Reporte final guardado en: output/reporte_etl_20251015_2107.json
+2025-10-15 21:07:28,069 - ETL_MANAGER - INFO - === RESUMEN FINAL ===
+2025-10-15 21:07:28,069 - ETL_MANAGER - INFO - Total registros extraídos: 76,401
+2025-10-15 21:07:28,070 - ETL_MANAGER - INFO - Total registros transformados: 76,401
+2025-10-15 21:07:28,070 - ETL_MANAGER - INFO - Tablas cargadas en SQLite: 2
+2025-10-15 21:07:28,077 - ETL_MANAGER - INFO - Proceso ETL completado exitosamente
+2025-10-15 21:07:28,081 - ETL_MANAGER - INFO - === PROCESO ETL COMPLETADO EXITOSAMENTE ===
+2025-10-15 21:07:28,082 - ETL_MANAGER - INFO - Hora de finalización: 2025-10-15 21:07:28
+2025-10-15 21:07:28,083 - ETL_MANAGER - INFO - Duración total: 0:02:16.116939
