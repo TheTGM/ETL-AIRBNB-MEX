@@ -4,6 +4,8 @@
 
 # URGENTE (ANTES DE CUALQUIER COSA PROFE)
 Github no nos dejo adjuntar el sqlite, por peso, pero ahí esta al correr el proyecto
+
+
 <img width="672" height="320" alt="image" src="https://github.com/user-attachments/assets/9f28417f-9c61-4bda-bad9-091a4219b94c" />
 
 
